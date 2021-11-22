@@ -7,6 +7,7 @@ import { RoutingModule } from './routing.module';
 //pages
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { DetalhesComponent } from './detalhes/detalhes.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { DetalhesComponent } from './detalhes/detalhes.component';
   ],
   imports: [
     CommonModule,
-    RoutingModule
+    RoutingModule,
+    SharedModule
   ]
 })
 export class PagesModule {
