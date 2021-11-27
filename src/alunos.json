@@ -1,0 +1,20 @@
+{
+  "alunos": [
+    {
+      "id": 1,
+      "ra": 123456,
+      "name": "Paulo",
+      "curso": "Análise e Desenvolvimento de Sistemas",
+      "semestre": 1,
+      "periodo": "matutino"
+    },
+    {
+      "id": 2,
+      "ra": 654321,
+      "name": "João",
+      "curso": "Análise e Desenvolvimento de Sistemas",
+      "semestre": 2,
+      "periodo": "matutino"
+    }
+  ]
+}
