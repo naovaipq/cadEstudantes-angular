@@ -6,19 +6,24 @@ import { FormsModule } from '@angular/forms';
 
 //componentes
 import { FormularioComponent } from './formulario/formulario.component';
+import { ListAlunosComponent } from './list-alunos/list-alunos.component';
+import { RoutingModule } from '../pages/routing.module';
 
 
 
 @NgModule({
   declarations: [
-    FormularioComponent
+    FormularioComponent,
+    ListAlunosComponent
   ],
   exports:[
-    FormularioComponent
+    FormularioComponent,
+    ListAlunosComponent
   ],
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    RoutingModule
   ]
 })
 export class ComponentesModule { }
