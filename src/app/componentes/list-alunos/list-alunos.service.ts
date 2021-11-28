@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { tap } from 'rxjs/operators'
+import { delay, tap } from 'rxjs/operators'
 
 //http
 import { HttpClient } from '@angular/common/http'
@@ -16,6 +16,7 @@ export class ListAlunosService {
   list() {
     return this.http.get<Aluno[]>(this.API)
       .pipe(
+        delay(2000),
         tap(console.log)
       );
 

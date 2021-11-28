@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Aluno } from './aluno';
 import { ListAlunosService } from './list-alunos.service';
 
@@ -9,7 +10,9 @@ import { ListAlunosService } from './list-alunos.service';
 })
 export class ListAlunosComponent implements OnInit {
 
-  alunos: Aluno[] = [];
+  //alunos: Aluno[] = [];
+
+  alunos$: Observable<Aluno[]> | undefined;
 
   constructor(private service: ListAlunosService) { }
 
@@ -18,7 +21,9 @@ export class ListAlunosComponent implements OnInit {
   }
 
   getAlunos() {
-    this.service.list().subscribe(alunos => this.alunos = alunos);
+    // this.service.list().subscribe(alunos => this.alunos = alunos);
+    
+    this.alunos$ = this.service.list();
   }
 
 }
