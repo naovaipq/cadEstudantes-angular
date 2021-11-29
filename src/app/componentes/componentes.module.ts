@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 //forms
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 //componentes
 import { FormularioComponent } from './formulario/formulario.component';
@@ -23,6 +23,7 @@ import { RoutingModule } from '../pages/routing.module';
   imports: [
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     RoutingModule
   ]
 })

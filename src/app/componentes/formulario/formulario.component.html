@@ -2,25 +2,26 @@
     
     <h1 class="text-center mt-5">Cadastre os Estudantes</h1>
     
-    <form class="mt-5" #f="ngForm" (ngSubmit)="onSubmit(f)">
+    <form class="needs-validation mt-5" novalidate [formGroup]="form">
         <div class="row">
             <div class="mb-3">
                 <label for="RA" class="form-label">RA do Aluno</label>
-                <input type="text" class="form-control" id="RA" name="RA" aria-describedby="RA"placeholder="Ex: 123456" [(ngModel)]="aluno.ra">
+                <input type="text" class="form-control" id="ra" placeholder="Ex: 123456" formControlName="ra" [ngClass]="{ 'is-invalid': submitted && hasError('ra')}">
             </div>
         </div>
+
         <div class="row">
             <div class="mb-3">
                 <label for="nome" class="form-label">Nome</label>
-                <input type="text" class="form-control" id="nome" name="nome" aria-describedby="nome" placeholder="Fulano de Tal" [(ngModel)]="aluno.nome">
+                <input type="text" class="form-control" id="nome" placeholder="Fulano de Tal" formControlName="nome" [ngClass]="{ 'is-invalid': submitted && hasError('nome')}">
             </div>
         </div>
+
         <div class="row">
             <div class="col-md-6 col-sm-12">
                 <div class="mb-3">
                     <label for="curso" class="form-label">Curso</label>
-                    <select class="form-select form-select-md" aria-label="curso" id="curso" name="curso" [(ngModel)]="aluno.curso">
-                        <option selected>Selecione</option>
+                    <select class="form-select form-select-md" id="curso" formControlName="curso" [ngClass]="{ 'is-invalid': submitted && hasError('curso')}">
                         <option value="Análise e Desenvolvimento de Sistemas">Análise e Desenvolvimento de Sistemas</option>
                         <option value="Gestão de TI">Gestão de TI</option>
                         <option value="Mecatrônica Insdustrial">Mecatrônica Insdustrial</option>
@@ -31,8 +32,7 @@
             <div class="col-md-3 col-sm-12">
                 <div class="mb-3">
                     <label for="semestre" class="form-label">Semestre</label>
-                    <select class="form-select form-select-md" aria-label="semestre" id="semestre" name="semestre" [(ngModel)]="aluno.semestre">
-                        <option selected>Selecione</option>
+                    <select class="form-select form-select-md" id="semestre" formControlName="semestre" [ngClass]="{ 'is-invalid': submitted && hasError('semestre')}">
                         <option value="1°">1°</option>
                         <option value="2°">2°</option>
                         <option value="3°">3°</option>
@@ -45,8 +45,7 @@
             <div class="col-md-3 col-sm-12">
                 <div class="mb-3">
                     <label for="periodo" class="form-label">Período</label>
-                    <select class="form-select form-select-md" aria-label="periodo" id="periodo" name="periodo" [(ngModel)]="aluno.periodo">
-                        <option selected>Selecione</option>
+                    <select class="form-select form-select-md" id="periodo" formControlName="periodo" [ngClass]="{ 'is-invalid': submitted &&  hasError('periodo')}">                       
                         <option value="Matutino">Matutino</option>
                         <option value="Vespertino">Vespertino</option>
                         <option value="Noturno">Noturno</option>
@@ -54,8 +53,9 @@
                 </div>
                 </div>
             </div>
-            <div class="col text-center mt-3 mb-5">
-                <button type="submit" class="btn btn-success w-50">Cadastrar</button>
+            <div class="mt-3 mb-5">
+                    <button type="submit" class="btn btn-success" (click)="onSubmit()">Cadastrar</button>
+                    <button type="button" class="btn btn-default" (click)="onCancel()">Cancelar</button>
             </div>
                 
     </form>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 
 @Component({
   selector: 'formulario',
@@ -8,22 +8,36 @@ import { NgForm } from '@angular/forms';
 })
 export class FormularioComponent implements OnInit {
 
-  aluno: any = {
-    ra: '',
-    nome: '',
-    curso: '',
-    semestre: '',
-    periodo: ''
-  }
+  form!: FormGroup;
+  submitted = false;
 
-  onSubmit(f: NgForm){
-    console.log(f);
-    console.log(this.aluno)
-  }
-
-  constructor() { }
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
+    this.form = this.fb.group({
+      ra: [null, [Validators.required, Validators.minLength(10) ,Validators.maxLength(10)]],
+      nome: [null, [Validators.required, Validators.minLength(1)]],
+      curso: [null, [Validators.required]],
+      semestre: [null, [Validators.required]],
+      periodo: [null, [Validators.required]],
+    });
+  }
+
+  hasError(field: string) {
+    return this.form.get(field)?.errors;
+  }
+
+  onSubmit() {
+    this.submitted = true;
+    console.log(this.form.value);
+    if (this.form.valid){
+      console.log('submit');
+    }
+  }
+
+  onCancel() {
+    this.submitted = false;
+    this.form.reset();
   }
 
 }
