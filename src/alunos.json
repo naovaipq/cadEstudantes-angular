@@ -15,6 +15,22 @@
       "curso": "Análise e Desenvolvimento de Sistemas",
       "semestre": 2,
       "periodo": "matutino"
+    },
+    {
+      "ra": "1234579813",
+      "nome": "fgh",
+      "curso": "Gestão de TI",
+      "semestre": "4°",
+      "periodo": "Vespertino",
+      "id": 3
+    },
+    {
+      "ra": "9876543210",
+      "nome": "lpoelaksd",
+      "curso": "Gestão de TI",
+      "semestre": "3°",
+      "periodo": "Noturno",
+      "id": 4
     }
   ]
 }

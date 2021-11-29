@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { delay, tap } from 'rxjs/operators'
+import { delay, take, tap } from 'rxjs/operators'
 
 //http
 import { HttpClient } from '@angular/common/http'
@@ -23,4 +23,8 @@ export class ListAlunosService {
   }
 
   constructor(private http: HttpClient) { }
+
+  creat(aluno: any) {
+    return this.http.post(this.API, aluno).pipe(take(1));
+  }
 }
