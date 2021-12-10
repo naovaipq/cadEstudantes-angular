@@ -1,0 +1,60 @@
+{
+  "alunos": [
+    {
+      "id": 1,
+      "ra": 123456,
+      "nome": "Paulo",
+      "curso": "Análise e Desenvolvimento de Sistemas",
+      "semestre": 1,
+      "periodo": "matutino"
+    },
+    {
+      "id": 2,
+      "ra": 654321,
+      "nome": "João",
+      "curso": "Análise e Desenvolvimento de Sistemas",
+      "semestre": 2,
+      "periodo": "matutino"
+    },
+    {
+      "ra": "1234579813",
+      "nome": "fgh",
+      "curso": "Gestão de TI",
+      "semestre": "4°",
+      "periodo": "Vespertino",
+      "id": 3
+    },
+    {
+      "ra": "9876543210",
+      "nome": "lpoelaksd",
+      "curso": "Gestão de TI",
+      "semestre": "3°",
+      "periodo": "Noturno",
+      "id": 4
+    },
+    {
+      "ra": "1234567896",
+      "nome": "pasldp",
+      "curso": "Mecatrônica Insdustrial",
+      "semestre": "2°",
+      "periodo": "Noturno",
+      "id": 5
+    },
+    {
+      "ra": "1234579813",
+      "nome": "lpoelaksd",
+      "curso": "Mecatrônica Insdustrial",
+      "semestre": "3°",
+      "periodo": "Vespertino",
+      "id": 6
+    },
+    {
+      "ra": "9876543210",
+      "nome": "gmail",
+      "curso": "Gestão de TI",
+      "semestre": "2°",
+      "periodo": "Vespertino",
+      "id": 7
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+<div class="container mt-5">
+    <div class="card">
+        <h5 class="card-header">
+            <div class="float-start">
+                <h4>Alunos</h4>
+            </div>
+            <div class="float-end">
+                <a class="btn btn-primary" routerLink="/cadastro">Novo Aluno +</a>
+                <a class="btn btn-secondary" (click)="onRefresh()">Atualizar</a>
+            </div>
+        </h5>
+        <div class="card-body">
+            <table class="table table-hover" *ngIf="alunos$ | async as alunos; else loadingError">
+                <thead>
+                  <tr class="text-center">
+                    <th scope="col">RA</th>
+                    <th scope="col">NOME</th>
+                    <th scope="col">CURSO</th>
+                    <th scope="col">SEMESTRE</th>
+                    <th scope="col">PERÍODO</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="text-center" *ngFor="let aluno of alunos">
+                    <td>{{ aluno.ra }}</td>
+                    <td>{{ aluno.nome }}</td>
+                    <td>{{ aluno.curso }}</td>
+                    <td>{{ aluno.semestre }}</td>
+                    <td>{{ aluno.periodo }}</td>
+                  </tr>
+                </tbody>
+            </table>
+
+            <ng-template #loadingError>
+              <div *ngIf="error$ | async; else loading">
+                Erro ao carregar alunos! Tente novamente mais tarde.
+              </div>
+              <ng-template #loading>
+                <span>Carregando Alunos...</span>
+              </ng-template>
+            </ng-template>
+        </div>
+    </div>
+</div>
