@@ -11,7 +11,7 @@ import { Aluno } from './aluno';
 })
 export class ListAlunosService {
 
-  private readonly API= 'http://localhost:3000/alunos'
+  private readonly API= 'http://localhost:8080/estudantes'
 
   list() {
     return this.http.get<Aluno[]>(this.API)
@@ -24,7 +24,7 @@ export class ListAlunosService {
 
   constructor(private http: HttpClient) { }
 
-  creat(aluno: any) {
+  creat(aluno: Aluno) {
     return this.http.post(this.API, aluno).pipe(take(1));
   }
 }
