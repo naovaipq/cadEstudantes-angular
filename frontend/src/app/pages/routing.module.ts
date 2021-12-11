@@ -8,7 +8,8 @@ import { DetalhesComponent } from './detalhes/detalhes.component';
 const routes: Routes = [
   { path: '', component: DetalhesComponent },
   { path: 'cadastro', component: CadastroComponent },
-  { path: 'detalhes', component: DetalhesComponent }
+  { path: 'detalhes', component: DetalhesComponent },
+  { path: 'detalhes/editar/:id', component: CadastroComponent }
 ];
 
 @NgModule({

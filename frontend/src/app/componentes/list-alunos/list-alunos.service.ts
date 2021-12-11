@@ -12,7 +12,9 @@ import { Aluno } from './aluno';
 export class ListAlunosService {
 
   private readonly API= 'http://localhost:8080/estudantes'
-
+  
+  constructor(private http: HttpClient) { }
+  
   list() {
     return this.http.get<Aluno[]>(this.API)
       .pipe(
@@ -22,7 +24,9 @@ export class ListAlunosService {
 
   }
 
-  constructor(private http: HttpClient) { }
+  loadByID(id: number){
+    return this.http.get<Aluno>(`${this.API}/${id}`).pipe(take(1));   
+  }
 
   creat(aluno: Aluno) {
     return this.http.post(this.API, aluno).pipe(take(1));

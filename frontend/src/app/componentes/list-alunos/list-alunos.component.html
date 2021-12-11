@@ -6,6 +6,7 @@
             </div>
             <div class="float-end">
                 <a class="btn btn-primary" routerLink="/cadastro">Novo Aluno +</a>
+
                 <a class="btn btn-secondary" (click)="onRefresh()">Atualizar</a>
             </div>
         </h5>
@@ -27,6 +28,11 @@
                     <td>{{ aluno.curso }}</td>
                     <td>{{ aluno.semestre }}</td>
                     <td>{{ aluno.periodo }}</td>
+                    <span class="float-right btn-group btn-group-sm">
+                      <button class="btn btn-outline-warning mt-3" (click)="onEdit(aluno.id)">Editar</button>
+
+                      <button class="btn btn-outline-danger mt-3 btn-sm">Deletar</button>
+                    </span>
                   </tr>
                 </tbody>
             </table>

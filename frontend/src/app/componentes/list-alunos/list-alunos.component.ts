@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { empty, Observable, Subject } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { Aluno } from './aluno';
@@ -7,7 +8,8 @@ import { ListAlunosService } from './list-alunos.service';
 @Component({
   selector: 'list-alunos',
   templateUrl: './list-alunos.component.html',
-  styleUrls: ['./list-alunos.component.css']
+  styleUrls: ['./list-alunos.component.css'],
+  preserveWhitespaces: true
 })
 export class ListAlunosComponent implements OnInit {
 
@@ -16,7 +18,9 @@ export class ListAlunosComponent implements OnInit {
   alunos$: Observable<Aluno[]> | undefined;
   error$ = new Subject<boolean>();
 
-  constructor(private service: ListAlunosService) { }
+  constructor(private service: ListAlunosService,
+              private router: Router,
+              private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.getAlunos();
@@ -36,6 +40,10 @@ export class ListAlunosComponent implements OnInit {
         return empty();
       })
     );
+  }
+
+  onEdit(id: number) {
+    this.router.navigate(['editar', id], { relativeTo: this.route})
   }
 
 }
